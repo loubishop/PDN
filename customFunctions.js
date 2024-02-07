@@ -1,6 +1,7 @@
 let nightScene = false;
 let dayScene = false;
 let triangleBool = false;
+let miniHouse = false 
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -16,6 +17,10 @@ function draw() {
     if (drawtriangleBool) {
         triangletracker();
     }
+    if(miniHouse){
+    	tinyHouse()
+    }
+
 }
 
 // Custom brush function
@@ -35,6 +40,11 @@ function drawtriangletracker() {
     background(138, 39, 30);
     fill(242, 94, 198);
     triangle(mouseX, mouseY, windowWidth / 2, windowHeight / 2, 200, 700);
+
+   function miniHouse(){
+   	background (164, 52, 235)
+   	fill(183, 84, 196)
+   }square(mouseX,mouseY, windowWidth/2 , windowHeight/2, 300, 300, 400, 400)
 }
 
 // p5 key pressed function
@@ -55,6 +65,12 @@ function keyPressed() {
         nightScene = false;
         dayScene = false;
         triangleBool = true;
+    }
+    if (key=== 'e'){
+    	nightScene = false
+    	dayScene = false
+    	triangleBool = false
+    	miniHouse = true 
     }
 }
 
