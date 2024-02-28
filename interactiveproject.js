@@ -8,6 +8,7 @@ let fairyY;
 let sparklex = []
 let sparkley = []
 let sparkleSpeed = []
+let fairySpeed = []
 
 let fairyPlayer
 let fairyYpos
@@ -46,7 +47,7 @@ function draw() {
 }
 
 function startGame() {
-  background(242, 155, 188);
+  background(66, 135, 245);
   fill(255);
   textSize(30);
   text('Help the fairy collect her dust! Your score is ' + score + ' points!!!', 20, 50);
@@ -63,10 +64,10 @@ function startGame() {
 
 
   for(let i= 0; i < sparklex.length; i++){
-    image(fairy, sparklex[i], sparkley[i], 60, 60)
-    sparkley[i] = sparkley[i] + fairySpeed[i]
+    image(sparkle, sparklex[i], sparkley[i], 60, 60)
+    sparkley[i] = sparkley[i] + sparkleSpeed[i]
 
-    if(dist(fairyXpos, fairyYpos, x[i], y[i]) <30){
+    if(dist(fairyXpos, fairyYpos, sparklex[i], sparkley[i]) <30){
       sparklex.splice(i, 1)
       sparkley.splice(i, 1)
       sparkleSpeed.splice(i, 1)
@@ -94,7 +95,7 @@ function mousePressed(){
   if(mouseY < 200){
     sparklex.push(mouseX)
     sparkley.push(mouseY)
-   sparkleSpeed.push(random(1, 4))
+   sparkleSpeed.push(floor(random(1, 4)));
   }
 }
 
