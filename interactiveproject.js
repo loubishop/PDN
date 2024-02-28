@@ -1,6 +1,7 @@
 
 let fairy;
 let sparkle;
+let fairykingdom;
 
 let fairyX;
 let fairyY;
@@ -27,7 +28,9 @@ let winBool = false;
 
 function preload() {
   fairy = loadImage('fairy.png');
-  sparkle = loadImage('sparkle.png')
+  sparkle = loadImage('sparkle2.png')
+  fairykingdom = loadImage ('fairykingdom.png')
+
 }
 
 function setup() {
@@ -47,14 +50,15 @@ function draw() {
 }
 
 function startGame() {
-  background(66, 135, 245);
+  background(250, 235, 250);
+  image(fairykingdom, windowWidth/2, windowHeight/2, windowWidth, windowHeight)
   fill(255);
   textSize(30);
   text('Help the fairy collect her dust! Your score is ' + score + ' points!!!', 20, 50);
 
 
 
-  image(fairy, fairyXpos, fairyYpos, 60, 60)
+  image(fairy, fairyXpos, fairyYpos, 100, 100)
 
   fairyXpos = fairyXpos + fairyXspeed 
 
@@ -96,6 +100,12 @@ function mousePressed(){
     sparklex.push(mouseX)
     sparkley.push(mouseY)
    sparkleSpeed.push(floor(random(1, 4)));
+  }
+  if (mouseY > 200){
+  fill(255);
+  textSize(30);
+  text('Too Low! Try Again :(', windowWidth/2, windowHeight/2)
+
   }
 }
 
