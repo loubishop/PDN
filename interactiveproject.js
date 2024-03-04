@@ -56,8 +56,6 @@ function startGame() {
   textSize(30);
   text('Help the fairy collect her dust! Your score is ' + score + ' points!!!', 20, 50);
 
-
-
   image(fairy, fairyXpos, fairyYpos, 100, 100)
 
   fairyXpos = fairyXpos + fairyXspeed 
@@ -84,6 +82,11 @@ function startGame() {
       sparkleSpeed.splice(i,1)
     }
   }
+    if (mouseIsPressed === true && mouseY > 200) {
+    fill(255);
+    textSize(30);
+    text('Too Low! Try Again :(', windowWidth/2, windowHeight/2)
+ }
 
 }
 
@@ -101,11 +104,6 @@ function mousePressed(){
     sparkley.push(mouseY)
    sparkleSpeed.push(floor(random(1, 4)));
   }
-  if (mouseY > 200){
-  fill(255);
-  textSize(30);
-  text('Too Low! Try Again :(', windowWidth/2, windowHeight/2)
-
-  }
+  
 }
 
