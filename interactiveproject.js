@@ -86,16 +86,23 @@ function startGame() {
     fill(255);
     textSize(30);
     text('Too Low! Try Again :(', windowWidth/2, windowHeight/2)
+
  }
+ if(score == 10){
+   startBool = false
+   winBool = true
+}
 
 }
 
 function winGame() {
-  background(0);
+  background(250, 235, 250);
+  image(fairykingdom, windowWidth/2, windowHeight/2, windowWidth, windowHeight)
   fill(255);
   textSize(30);
   text('You Win!!', windowWidth / 2, 50);
   image(fairy, windowWidth / 2, windowHeight / 2, 100, 100);
+
 }
 
 function mousePressed(){
